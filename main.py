@@ -81,10 +81,10 @@ def generateLabelDataArray(file):
             #Leer coordenadas de las caras
             for c in range(1, numero_caras+1):
                 coordenada_cara = datos[renglon+c]
-                #arreglo_caras.append(coordenada_cara)
+                #Aqui se convierte el string a un arreglo de strings
                 arr_strings = coordenada_cara.split(" ")
-                #["321","132","12","213","321","","1"]
                 arr_strings.pop(5)
+                #Aqui se convierte en un arreglo de decimales
                 arr_floats = [float(x) for x in arr_strings]
                 arreglo_caras.append(transformCoordinates(arr_floats, img_width, img_height))
             dict_imagen = {'nombre': nombre_imagen_archivo, 'annotations': arreglo_caras}
