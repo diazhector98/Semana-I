@@ -103,5 +103,7 @@ def generateLabelDataArray(file):
 
 
 
-arr = generateLabelDataArray(labels_files[0])
-print(arr)
+dict_of_dict=[]
+for n in range (0,len(labels_files)):
+    arr = generateLabelDataArray(labels_files[n])
+    dict_of_dict.append(arr)
