@@ -40,7 +40,7 @@ def transformCoordinates(coordinates, width, height):
         rect_height -= (rect_y + rect_height) - height
 
     #print("Coordenadas rectangulo: ", (rect_width, rect_height, rect_x, rect_y))
-    return (int(rect_width), int(rect_height), int(rect_x), int(rect_y))
+    return (int(rect_x), int(rect_y), int(rect_width), int(rect_height))
 
 
 #borrar imágenes sin etiqueta
@@ -160,6 +160,8 @@ def pdToXml(name, coordinates, size, img_folder):
     xml.append("    <segmented>0</segmented>")
 
     for field in coordinates:
+        print
+        print(field)
         xmin, ymin = max(0,field[0]), max(0,field[1])
         xmax = min(size["width"], field[0]+field[2])
         ymax = min(size["height"], field[1]+field[3])
