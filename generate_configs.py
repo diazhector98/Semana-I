@@ -2,7 +2,7 @@ def generateConfigs():
     file = open('./model/faster_rcnn_resnet101_coco.config', 'r');
     string = file.red()
 
-    for i in range(0, 100):
+    for i in range(0, 5):
         new_learning_rates = [i*2,i*3,i*4]
         new_file_string = string
         new_file_string.replace("step: 0\nlearning_rate: .001", "step: 0\nlearning_rate: {}".format(new_learning_rates[0]))
